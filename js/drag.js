@@ -17,7 +17,7 @@ function drag(el){
 	//Initialize parameters when the mouse is down
 	el.onmousedown=function(event){
 		el.style.position="absolute";
-		event=event||context.event;
+		event=event||window.event;
 		dragging=true;
 		mouseX=event.clientX; 
 		mouseY=event.clientY;
@@ -27,7 +27,7 @@ function drag(el){
 	
 	//Reset the coordinate of element when the mouse is moving
 	document.onmousemove=function(event){
-		event=event||context.event;
+		event=event||window.event;
 		if(dragging){
 			el.style.left=parseInt(event.clientX-mouseX+clientX)+"px";
 			el.style.top=parseInt(event.clientY-mouseY+clientY)+"px";
